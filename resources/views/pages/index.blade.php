@@ -3,17 +3,25 @@
 
 @section('content')
 
-<div class="container">
+<div class="container text-center">
     Ze słonecznej SBM!
     Lista Stron!
-    <ul>
+    <table class="table table-hover text-left">
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+        </tr>
         @foreach($pages as $page)
-        <li>
-            <h1>{{ $page->title }}</h1>
-            <p>{{ $page->content }}</p>
-        </li>
+            <tr>
+                <td>{{ $page->id }}</td>
+                <td>{{ $page->title  }}</td>
+                <td><a class="btn btn-info" href="#!">Edit</a></td>
+                <td><a class="btn btn-danger" href="#!">Delete</a></td></td>
+            </tr>
         @endforeach
-    </ul>
+    </table>
 
     {{ $pages->links() }}
 </div>
