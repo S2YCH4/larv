@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Pages;
 
 use Illuminate\Http\Request;
 use App\Pages;
+use App\Http\Controllers\Controller;
 
-class PagesController extends Controller
+class AdminPagesController extends Controller
 {
     
     /**

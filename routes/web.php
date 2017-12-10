@@ -21,10 +21,19 @@ Route::group([
     'roles' => 'Admin'
 ], function(){
     
-    Route::resource('pages', 'PagesController');
+    
+    Route::get('admin/pages', [
+        'uses' => 'Pages\AdminPagesController@index',
+        'as' => 'pages.index'
+    ]);
+    
+    Route::get('admin/pages/create', [
+        'uses' => 'Pages\AdminPagesController@create',
+        'as' => 'pages.create'
+    ]);
     
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('home');
